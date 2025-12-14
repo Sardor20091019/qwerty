@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JSONPlaceholder - Local Documentation</title>
+    <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background-color: #f4f7f9;
+        color: #333;
+        line-height: 1.6;
+        max-width: 900px;
+        margin: 20px auto;
+      }
+
+      h1 {
+        color: #007bff;
+        font-size: 2.5em;
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      h2 {
+        font-size: 2em;
+        color: #007bff;
+        border-bottom: 2px solid #eee;
+        padding-bottom: 10px;
+        margin-top: 30px;
+      }
+
+      p {
+        margin: 10px 0;
+      }
+
+      code {
+        color: #d83b01;
+        background-color: #fff3f0;
+        padding: 2px 6px;
+        border-radius: 3px;
+        font-size: 0.95em;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      .resources-list {
+        list-style: none;
+        padding: 0;
+        margin: 20px 0;
+      }
+
+      .resources-list li {
+        background: white;
+        padding: 10px 15px;
+        margin-bottom: 8px;
+        border-radius: 4px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        transition: background-color 0.15s;
+      }
+
+      .resources-list li:hover {
+        background-color: #e9f7ff;
+      }
+
+      .resource-name a {
+        color: #007bff;
+        display: inline-block;
+      }
+
+      .resource-name a:hover {
+        text-decoration: underline;
+      }
+
+      .resource-name code {
+        color: #007bff;
+        background-color: #f0f8ff;
+        padding: 2px 6px;
+        border-radius: 3px;
+        font-size: 0.95em;
+      }
+
+      .resource-count {
+        color: #555;
+        font-size: 0.9em;
+        text-align: right;
+      }
+
+      .routes-container {
+        margin-top: 20px;
+      }
+
+      .route-item {
+        display: flex;
+        margin-bottom: 5px;
+      }
+
+      .route-method {
+        color: white;
+        padding: 4px 8px;
+        border-radius: 3px 0 0 3px;
+        font-size: 0.8em;
+        font-weight: bold;
+        width: 55px;
+        text-align: center;
+      }
+
+      .route-method.get {
+        background-color: #28a745;
+      }
+      .route-method.post {
+        background-color: #ffc107;
+        color: #333;
+      }
+      .route-method.put {
+        background-color: #17a2b8;
+      }
+      .route-method.patch {
+        background-color: #fd7e14;
+      }
+      .route-method.delete {
+        background-color: #dc3545;
+      }
+
+      .route-path a {
+        color: #495057;
+        background-color: #e9ecef;
+        padding: 4px 10px;
+        border-radius: 0 3px 3px 0;
+        font-family: monospace;
+        flex-grow: 1;
+        font-size: 0.9em;
+        display: block;
+      }
+
+      .route-path a:hover {
+        text-decoration: none;
+        background-color: #dee2e6;
+      }
+
+      .note-block {
+        background-color: #fff3cd;
+        border-left: 5px solid #ffc107;
+        padding: 10px 15px;
+        border-radius: 4px;
+        margin-top: 15px;
+        font-size: 0.9em;
+        color: #856404;
+      }
+
+      .note-block a {
+        color: #856404;
+        text-decoration: underline;
+        font-weight: normal;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>{JSON} Placeholder</h1>
+
+    <section>
+      <h2>When to use</h2>
+      <p>
+        JSONPlaceholder is a free online REST API that you can use <strong>whenever you
+        need some fake data.</strong> It can be in a README on GitHub, for a demo on
+        CodeSandbox, in code examples on Stack Overflow, ...or simply to test
+        things locally.
+      </p>
+      <ul class="use-case-list"></ul>
+    </section>
+
+    <section>
+      <h2>Resources</h2>
+      <p>JSONPlaceholder comes with a set of 6 common resources:</p>
+
+      <ul class="resources-list">
+        <li>
+          <span class="resource-name"
+            ><a
+              href="https://jsonplaceholder.typicode.com/posts"
+              target="_blank"
+              ><code>/posts</code></a
+            ></span
+          >
+          <span class="resource-count">100 posts</span>
+        </li>
+        <li>
+          <span class="resource-name"
+            ><a
+              href="https://jsonplaceholder.typicode.com/comments"
+              target="_blank"
+              ><code>/comments</code></a
+            ></span
+          >
+          <span class="resource-count">500 comments</span>
+        </li>
+        <li>
+          <span class="resource-name"
+            ><a
+              href="https://jsonplaceholder.typicode.com/albums"
+              target="_blank"
+              ><code>/albums</code></a
+            ></span
+          >
+          <span class="resource-count">100 albums</span>
+        </li>
+        <li>
+          <span class="resource-name"
+            ><a
+              href="https://jsonplaceholder.typicode.com/photos"
+              target="_blank"
+              ><code>/photos</code></a
+            ></span
+          >
+          <span class="resource-count">5000 photos</span>
+        </li>
+        <li>
+          <span class="resource-name"
+            ><a
+              href="https://jsonplaceholder.typicode.com/todos"
+              target="_blank"
+              ><code>/todos</code></a
+            ></span
+          >
+          <span class="resource-count">200 todos</span>
+        </li>
+        <li>
+          <span class="resource-name"
+            ><a
+              href="https://jsonplaceholder.typicode.com/users"
+              target="_blank"
+              ><code>/users</code></a
+            ></span
+          >
+          <span class="resource-count">10 users</span>
+        </li>
+      </ul>
+
+      <div class="note-block">
+        <strong>Note:</strong> resources have relations. For example: posts have
+        many comments, albums have many photos, ... see
+        <a href="" target="_blank">guide</a>
+        for the full list.
+      </div>
+    </section>
+
+    <section>
+      <h2>Routes</h2>
+      <p>
+        All HTTP methods are supported. You can use http or https for your
+        requests.
+      </p>
+
+      <div class="routes-container">
+        <div class="route-item">
+          <div class="route-method get">GET</div>
+          <div class="route-path">
+            <a href="https://jsonplaceholder.typicode.com/posts" target="_blank"
+              >/posts</a
+            >
+          </div>
+        </div>
+        <div class="route-item">
+          <div class="route-method get">GET</div>
+          <div class="route-path">
+            <a
+              href="https://jsonplaceholder.typicode.com/posts/1"
+              target="_blank"
+              >/posts/1</a
+            >
+          </div>
+        </div>
+        <div class="route-item">
+          <div class="route-method get">GET</div>
+          <div class="route-path">
+            <a
+              href="https://jsonplaceholder.typicode.com/posts/1/comments"
+              target="_blank"
+              >/posts/1/comments</a
+            >
+          </div>
+        </div>
+        <div class="route-item">
+          <div class="route-method get">GET</div>
+          <div class="route-path">
+            <a
+              href="https://jsonplaceholder.typicode.com/comments?postId=1"
+              target="_blank"
+              >/comments?postId=1</a
+            >
+          </div>
+        </div>
+
+        <div class="route-item" style="margin-top: 10px">
+          <div class="route-method post">POST</div>
+          <div class="route-path">/posts</div>
+        </div>
+
+        <div class="route-item">
+          <div class="route-method put">PUT</div>
+          <div class="route-path">/posts/1</div>
+        </div>
+
+        <div class="route-item">
+          <div class="route-method patch">PATCH</div>
+          <div class="route-path">/posts/1</div>
+        </div>
+
+        <div class="route-item">
+          <div class="route-method delete">DELETE</div>
+          <div class="route-path">/posts/1</div>
+        </div>
+      </div>
+
+      <div class="note-block">
+        <strong>Note:</strong> see
+        <a href="" target="_blank">guide</a>
+        for usage examples.
+      </div>
+    </section>
+  </body>
+</html>
